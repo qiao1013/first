@@ -174,7 +174,7 @@ finally:
     print("我要开奥迪A6L")  """
 
 #       异常具有传递性
-
+""" 
 def func1():
     print("1的开始")
     num = 1 / 0
@@ -191,3 +191,4 @@ def main():
     except Exception as e:
         print(f"出现异常了，信息是{e}")
 main()
+ """
