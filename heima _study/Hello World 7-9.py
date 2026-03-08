@@ -1,3 +1,6 @@
+import sys
+# 将 my_package 所在的父目录（python 目录）添加到 sys.path
+sys.path.append(r'C:\Users\乔\Desktop\python')
 #        第7章
 #         函数的多返回值
 """ def test():
@@ -194,3 +197,49 @@ main()
  """
 
 #  测试上传GitHub
+#        模块导入，模块其实就是python文件，from[模块名]import[模块|类|变量|*]*是全部内容as[别名]
+""" import time     #导入python内置文件，（也就是time.py)
+print("你好")
+time.sleep(5)
+print("我好")
+ """
+
+#     from模块名import 功能名      只能导入一个功能
+""" from time import sleep
+print("你好")
+sleep(5)
+print("我好") """
+
+# from 模块名  import*       *表示模块的全部功能
+""" from time import *
+print("你好")
+sleep(5)                     #与第一个的区别是前面不用加模块名
+print("你好") """
+
+# from 模块名 import * as
+# 使用as给特定功能加上别名
+
+# 自定义模块，新建了一个python文件my_module
+""" import my_module1 
+my_module1.test1(10,20)
+ """
+
+#导入模块时，出现命名相同的函数，第二个会把第一个覆盖掉
+
+
+#在测试中忘记删测试的调用函数了需要加main
+
+# __all__ = ['里面写什么，就只能用这个模块的什么，*不在指所有了']
+""" from my_module1 import*
+# test1(2,5)
+
+test2()
+ """
+
+#    包其实就是文件夹，里面全是python模块，不过要加__init__.py才能变成python包
+
+""" import my_package.my_module2
+my_package.my_module2.test()
+
+ """
+

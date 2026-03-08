@@ -500,7 +500,7 @@ print(num1)
 num5 = tuple[::-2]
 print(num5)"""
 
-#         str                              #
+#         str  进行切片                            #
 """
 str = 'itheima itcast python'
 num2 = str[::2]
