@@ -1,14 +1,15 @@
 import torch
 import numpy as np
+
+
 #              张量和标量计算
-"""torch.manual_seed(325)
+""" torch.manual_seed(325)
 t1 = torch.randint(low=-3,high=5,size=(3,4))
 print(t1)
 t2 = t1+10
 t3 = t1*10
 print(f'张量的加法\n{t2}')
 print(f'张量的乘法\n{t3}') """
-
 
 #add sub  mul div neg
 #加  减   乘   除   取-1
@@ -26,15 +27,14 @@ print(t1) """
 
 
 #2       张量的点乘  就是1*5   2*6 3*7  4*8
-A = torch.tensor(data=[[1,2],[3,4]])
+""" A = torch.tensor(data=[[1,2],[3,4]])
 B = torch.tensor(data=[[5,6],[7,8]])
 result = A*B
 #另外一个写法result = A.mul(B)
 print(A)
 print(B)
-print(result)
+print(result) """
 
- 
 #3张量的矩阵乘法运算        matmul 矩阵的英文matrix  乘法的英文multi
 """ torch.manual_seed(325)
 A = torch.randint(low=1,high=5,size=(2,3))
@@ -45,4 +45,3 @@ result = A.matmul(B)
 print(f'A的张量是\n{A}')
 print(f'B的张量是\n{B}')
 print(f'矩阵相乘的结果是\n{result}') """
-

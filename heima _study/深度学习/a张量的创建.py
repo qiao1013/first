@@ -2,8 +2,8 @@ import torch
 import numpy as np
 
 
-""" #创建张量
-#1基础创建
+#创建张量
+"""#1基础创建
 #1.1 - 创建标量   #把普通的基本类型封装为了张量
 t1 = torch.tensor(data=999)
 print(t1)
@@ -63,7 +63,8 @@ t11 = torch.zeros(size=(2,3))
 print(t11) """
 
 #张量的类型转换
-t_1 = torch.tensor([11,22,33])
+""" t_1 = torch.tensor([11,22,33])
 print(t_1.dtype)
 t_2 = t_1.type(dtype=torch.float16)
 print(t_2.dtype)
+ """

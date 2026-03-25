@@ -1,0 +1,63 @@
+# 用的的形状拼接的API有下面这些
+# reshape()   squeze()   unsqueeze()   transpose()   permute()
+
+import torch
+#  reshape()  能够改变张量的形状 能够升维和降维
+t1 = torch.tensor([[10,20,30],[40,50,60]])
+#  1获得张量的形状
+print(f'张量形状：{t1.shape},行数：{t1.shape[0]},列数：{t1.shape[1]}')#第一种写法
+print(f'张量形状：{t1.size()},行数：{t1.size(0)},列数：{t1.size(1)}')#第二种写法
+
+#  2reshape改张量的形状，要保证元素数量一致
+t1_ = t1.reshape(1,-1)#1行6列
+t2_ = t1.reshape(-1,1)#6行1列
+t3_ = t1.reshape(3,2)#3行2列
+print(t1_)
+print(t2_)
+print(t3_)
+
+
+
+#  squeeze 和 unsqueeze 降维  升维
+""" #  改变前后元素数量必须一致  dim在unsqueeze中必须要传参
+#  squeeze是降维  3->2
+torch.manual_seed(325)
+t1 = torch.randint(1,5,size=(4,1,5))
+# print(t1)
+# print(t1.shape)
+t2 = t1.squeeze()#降维不传参数
+# print(t2.shape)
+t3 = t1.squeeze(dim=0)#索引为0的维度因为是4，4>0所以降维不成功
+t4 = t1.squeeze(dim=1)#降维成功
+t5 = t1.squeeze(dim=2)#降维不成功
+print(t3.shape)
+print(t4.shape)
+print(t5.shape)
+
+#  unsqueeze是升维  2->3 
+#  dim在升维中必须传参，原来是几维度，dim最大就到几
+torch.manual_seed(324)
+t1 = torch.randint(1,5,size=(4,5))
+# print(t1)
+t2 = t1.unsqueeze(dim=0)#[1, 4, 5]
+t3 = t1.unsqueeze(dim=1)#[4, 1, 5]
+t4 = t1.unsqueeze(dim=2)#[4, 5, 1] """
+
+
+# transpose()  permute() 调整维度的顺序
+""" # 调整维度的顺序  元素个数不变
+#  transpose只能调整两个
+t1 = torch.randint(1,5,size=(5,4,2))#012
+t2 = t1.transpose(dim0=2,dim1=0)#245
+# print(t2.shape)
+
+
+#  permute能调整多个
+# 542->254
+#第一种用transpose
+t3 = t1.transpose(dim0=1,dim1=2)#542->524
+t4 = t3.transpose(dim0=0,dim1=1)#524->254
+print(t4.shape)
+#第二种用permute  一步到位 dim[0,1,2]->[2,0,1]
+t5 = t1.permute(dims=[2,0,1])
+print(t5.shape) """

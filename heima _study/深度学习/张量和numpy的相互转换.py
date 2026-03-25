@@ -23,10 +23,10 @@ print(t3)
 print(arr2)
  """
 #3标量转张量    
-t4 = torch.tensor(data=999)
-print(t4)
+""" t4 = torch.tensor(data=999)
+print(t4) """
 
 #4张量转标量
-result = t4.item()
+""" result = t4.item()
 print(result)
-print(type(result))
+print(type(result)) """
