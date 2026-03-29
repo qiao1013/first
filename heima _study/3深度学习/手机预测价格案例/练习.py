@@ -35,7 +35,7 @@ def create_dataset():
     #x.shape[0]样本数量
     #x.shape[1]特征数量
     features_num = x.shape[1]
-    #标签，目标值
+    #标签，目标值 使用numpy中的unique是为了去重  去掉重复值，排序，得到所有类别
     target_num = len(np.unique(y.values))
 
     return train_data,test_data,features_num,target_num
@@ -89,7 +89,7 @@ def model_train(train_data,features_num,target_num):
             #损失值
             loss_values = loss(y_pred,y)
             #更新损失值
-            total_loss_num+=loss_values.item()
+            total_loss_num+=loss_values.item()#把tensor变成数字
             #更新样本数量
             total_sample_num+=len(x)
             #固定代码
@@ -118,6 +118,7 @@ def pred_model(test_data,features_num,target_num):
     correct_cnt = 0
     for x,y in dataloder:
         y_pred = model(x)
+        #在分类任务中，有多个类别，argmax选取最可能的那一个，谁最大，我就告诉你它的位置，也就是效果好，为了和真实值做比较
         pred_id = torch.argmax(y_pred,dim=-1)
         correct_cnt+=(pred_id==y).sum()
     #计算准确率：
